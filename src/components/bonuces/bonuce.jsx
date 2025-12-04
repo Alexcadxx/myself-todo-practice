@@ -1,14 +1,10 @@
+// --> Bonuce
+
 import { Label } from '../label';
 
 import styles from './bonuce.module.css';
 
 export const Bonuce = ({ initialValue, value, onSetValue3, onBonusecNall }) => {
-	// const onAddBonuces = () => {
-	// 	setValue(value + 1);
-	// };
-	// const onBonusecNall = () => {
-	// 	setValue(initialValue);
-	// };
 	return (
 		<>
 			<div className={styles.bonuce}>
