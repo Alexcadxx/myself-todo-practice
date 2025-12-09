@@ -1,0 +1,24 @@
+{
+  "products": [
+    {
+      "id": "001",
+      "name": "TV set",
+      "price": 39900
+    },
+    {
+      "name": "Updated Smartphone ",
+      "price": 17890,
+      "id": "002"
+    },
+    {
+      "name": "New vacuumcleaner",
+      "price": 4690,
+      "id": "zI64OFZ"
+    },
+    {
+      "name": "New vacuumcleaner",
+      "price": 4690,
+      "id": "p9QsAb-"
+    }
+  ]
+}
