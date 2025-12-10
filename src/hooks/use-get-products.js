@@ -1,8 +1,7 @@
 // --> file use-get-products.js
 import { useEffect, useState } from 'react';
 
-export const useGetProducts = (isRefreshProduct) => {
-	const [products, setProducts] = useState([]);
+export const useGetProducts = (products, setProducts) => {
 	const [isLoading, setIsLoading] = useState(false);
 	useEffect(() => {
 		setIsLoading(true);
@@ -15,10 +14,11 @@ export const useGetProducts = (isRefreshProduct) => {
 			.finally(() => {
 				setIsLoading(false);
 			});
-	}, [isRefreshProduct]);
+	}, [setProducts]);
 
 	return {
 		products,
+		setProducts,
 		isLoading,
 	};
 };

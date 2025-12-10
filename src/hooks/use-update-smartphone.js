@@ -1,7 +1,7 @@
 // --> file use-update-smartphone.js
 import { useState } from 'react';
 
-export const useUpdateSmartphone = (refreshProduct) => {
+export const useUpdateSmartphone = (setProducts) => {
 	const [isUpdating, setIsUpdating] = useState(false);
 	const requestUpdateSmartphone = () => {
 		setIsUpdating(true);
@@ -14,9 +14,15 @@ export const useUpdateSmartphone = (refreshProduct) => {
 			}),
 		})
 			.then((rawResponse) => rawResponse.json())
-			.then((response) => {
-				console.log('Смартфон обновлен, ответ сервера:', response);
-				refreshProduct();
+			.then((updateProduct) => {
+				console.log('Смартфон обновлен, ответ сервера:', updateProduct);
+				setProducts((prevProducts) =>
+					prevProducts.map(
+						(product) => (product.id === updateProduct.id ? updateProduct : product),
+						console.log('updateProduct ', updateProduct),
+						console.log('prevProducts', prevProducts),
+					),
+				);
 			})
 			.finally(() => setIsUpdating(false));
 	};

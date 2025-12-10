@@ -1,7 +1,7 @@
 // --> file use-add-vacuumcleaner.js
 import { useState } from 'react';
 
-export const useAddVacuumCleaner = (refreshProduct) => {
+export const useAddVacuumCleaner = (setProducts) => {
 	const [isCreating, setIsCreating] = useState(false);
 	const requestAddVacuumCleaner = () => {
 		setIsCreating(true);
@@ -14,16 +14,15 @@ export const useAddVacuumCleaner = (refreshProduct) => {
 			}),
 		})
 			.then((rawResponse) => rawResponse.json())
-			.then((response) => {
-				console.log('Пылесос добавлен, ответ сервера:', response);
-				refreshProduct();
+			.then((newProduct) => {
+				console.log('Пылесос добавлен, ответ сервера:', newProduct);
+				setProducts((prevProducts) => [...prevProducts, newProduct]);
 			})
 			.finally(() => setIsCreating(false));
 	};
 	return {
 		isCreating,
 		requestAddVacuumCleaner,
-		setIsCreating,
 	};
 };
 // -----------------------------------------------------------------------------------

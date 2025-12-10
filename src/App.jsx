@@ -10,14 +10,11 @@ import {
 } from './hooks';
 
 export function App() {
-	const [isRefreshProduct, setIsRefreshProduct] = useState(false);
-
-	const refreshProduct = () => setIsRefreshProduct(!isRefreshProduct);
-
-	const { isCreating, requestAddVacuumCleaner } = useAddVacuumCleaner(refreshProduct);
-	const { isUpdating, requestUpdateSmartphone } = useUpdateSmartphone(refreshProduct);
-	const { isDeleting, requesDeleteHairdryer } = useDeleteHaierDrayer(refreshProduct);
-	const { products, isLoading } = useGetProducts(isRefreshProduct);
+	const [products, setProducts] = useState([]);
+	const { isCreating, requestAddVacuumCleaner } = useAddVacuumCleaner(setProducts);
+	const { isUpdating, requestUpdateSmartphone } = useUpdateSmartphone(setProducts);
+	const { isDeleting, requesDeleteHairdryer } = useDeleteHaierDrayer(setProducts);
+	const { isLoading } = useGetProducts(products, setProducts);
 
 	return (
 		<div className={styles.app}>
