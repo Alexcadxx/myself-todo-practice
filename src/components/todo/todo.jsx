@@ -1,10 +1,43 @@
+import { Button } from '../button/button';
+
 import styles from './todo.module.css';
 
-export function Todo({ completed, title }) {
+export function Todo({
+	completed,
+	title,
+	isEditing,
+	onEdit,
+	onTitleChange,
+	onCompletedChange,
+	onSave,
+	onRemove,
+}) {
 	return (
 		<div className={styles.todo}>
-			<input className={styles.checkbox} type="checkbox" checked={completed} readOnly />
-			{title}
+			<input
+				className={styles.checkbox}
+				type="checkbox"
+				checked={completed}
+				onChange={({ target }) => onCompletedChange(target.checked)}
+			/>
+			<div className={styles.title}>
+				{isEditing ? (
+					<input
+						type="text"
+						value={title}
+						onChange={({ target }) => onTitleChange(target.value)}
+					/>
+				) : (
+					<div onClick={onEdit}>{title}</div>
+				)}
+			</div>
+			<div>
+				{isEditing ? (
+					<Button onClick={onSave}>✎</Button>
+				) : (
+					<Button onClick={onRemove}>✖</Button>
+				)}
+			</div>
 		</div>
 	);
 }
