@@ -11,11 +11,13 @@ const fetchServer = (method, { id, ...payload } = {}) => {
 	if (method === HTTP_METHOD.GET) {
 		url += '';
 	} else {
-		if (method !== HTTP_METHOD.GET && method !== HTTP_METHOD.POST) {
+		// if (method !== HTTP_METHOD.GET && method !== HTTP_METHOD.POST) {
+		if (method !== HTTP_METHOD.POST) {
 			url += `/${id}`;
 		}
 
-		if (method !== HTTP_METHOD.GET && method !== HTTP_METHOD.DELETE) {
+		// if (method !== HTTP_METHOD.GET && method !== HTTP_METHOD.DELETE) {
+		if (method !== HTTP_METHOD.DELETE) {
 			options.body = JSON.stringify(payload);
 		}
 	}

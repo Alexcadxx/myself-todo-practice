@@ -10,13 +10,13 @@ export function ControlPanel({ onTodoAdd }) {
 
 	const onSearchPhraseChange = ({ target }) => {
 		setSearchPhrase(target.value);
-		console.log('target:', target);
-		console.log('target.value:', target.value);
+		console.log('onSearchPhraseChange-target:', target);
+		console.log('onSearchPhraseChange-target.value:', target.value);
 	};
 	const onSortingChange = ({ target }) => {
 		setIsSortingEnabled(target.checked);
-		console.log('target:', target);
-		console.log('target.checked:', target.checked);
+		console.log('setIsSortingEnabled-target:', target);
+		console.log('setIsSortingEnabled-target.checked:', target.checked);
 	};
 
 	return (

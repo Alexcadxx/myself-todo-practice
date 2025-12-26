@@ -1,7 +1,7 @@
 .todo {
 	display: flex;
 	padding: 10px;
-	border-bottom: 1px solid #bbb;
+	border-bottom: 1px solid #9b4e4e;
 }
 
 .checkbox {
@@ -13,4 +13,5 @@
 .title {
 	width: 100%;
 	margin-right: 10px;
+	border: 1px solid rgb(86, 156, 86);
 }

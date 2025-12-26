@@ -15,6 +15,8 @@ export function App() {
 
 	const onTodoSave = (todoId) => {
 		const { title, completed } = findTodo(todos, todoId) || { title: 'No data' };
+		console.log('onTodoSave - todoId', todoId);
+		console.log('onTodoSave - todos', todos);
 
 		if (todoId === NEW_TODO_ID) {
 			creatTodo({ title, completed }).then((todo) => {
@@ -36,6 +38,7 @@ export function App() {
 
 	const onTodoEdit = (id) => {
 		setTodos(setTodoInTodos(todos, { id, isEditing: true }));
+		console.log('onTodoEdit', todos);
 	};
 
 	const onTodoTitleChange = (id, newTitle) => {
