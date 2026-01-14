@@ -1,0 +1,47 @@
+.app {
+	text-align: center;
+}
+
+.productName {
+	margin-right: 10px;
+	font-weight: 400;
+	color: rgb(70, 44, 141);
+}
+
+.ownName {
+	margin-right: 20px;
+	font-weight: 500;
+	color: rgb(46, 179, 105);
+}
+.producPrice {
+	margin-right: 20px;
+}
+.productPcs {
+	margin-right: 20px;
+}
+.productId {
+	margin-right: 20px;
+}
+.totalAmount {
+	margin-right: 20px;
+}
+
+.inputProduct {
+	padding-top: 50px;
+}
+.inputProdName {
+	width: 100px;
+	margin-right: 10px;
+}
+.inputProdPrice {
+	width: 50px;
+	margin-right: 10px;
+}
+.inputProdPcs {
+	width: 35px;
+	margin-right: 10px;
+}
+.inputAmount {
+	width: 50px;
+	margin-right: 10px;
+}

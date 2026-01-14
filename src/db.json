@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "nameProd": "Finish",
+      "price": "33",
+      "pcs": "22",
+      "amount": 704,
+      "id": 0,
+      "name": "Finij"
+    },
+    {
+      "nameProd": "Dashaday",
+      "price": "20",
+      "pcs": "45",
+      "amount": 900,
+      "id": 2
+    }
+  ]
+}
